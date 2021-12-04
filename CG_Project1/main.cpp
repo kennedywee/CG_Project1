@@ -16,7 +16,6 @@
 #include "ken.h"
 #include "lisa.h"
 
-//#include "intro.h"
 //#include "intro_animation.h"
 #include "scene1.h"
 #include "scene1_animation.h"
@@ -24,27 +23,23 @@
 #include "scene2_animation.h"
 #include "scene3.h"
 #include "scene3_animation.h"
+#include "intro.h"
 //#include "scene4.h"
 //#include "scene4_animation.h"
-//#include "scene5.h"
-//#include "scene5_animation.h"
-
-
-
-
+#include "scene5.h"
+#include "scene5_animation.h"
 
 void Timer(int value) {
     if (value)glutPostRedisplay();
     glutTimerFunc(300, Timer, value);
 }
 
-
 void scenes() {
-    /*
+    
     if (scene_counter == 1) {
-        scene1(); scene1_animation();
+        intro();
     }
-    */
+
     if (scene_counter == 2) {
         scene1(); scene1_animation();
     } 
@@ -59,30 +54,32 @@ void scenes() {
     else if (scene_counter == 5) {
         scene4(); scene4_animation();
     }
-    else if (scene_counter == 6) {
-        scene5(); scene5_animation();
-    }
     */
- 
-    
-}
 
+    if (scene_counter == 6) {
+        scene5(); scene5_animation();
+    }    
+}
 
 void display() {
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(0.0, 0.0, 0.0, 0.0);
 
     ++frame;
+    //scene_counter = 6;
     printf("%d\n", frame);
-
-    // Scene Counter
-    if (frame >= 100 && frame < 200) scene_counter = 1; //introduction
-    else if (frame >= 200 && frame < 1470) scene_counter = 2; //scene1 = going to door
-    else if (frame >= 1470 && frame < 3800) scene_counter = 3; //scene2 = meet infected person
-    else if (frame >= 3800 && frame < 5000) scene_counter = 4; //scene3 = panic mc
-    else if (frame >= 5000 && frame < 6000) scene_counter = 5; //scene4 = virus attack antibody
-    else if (frame >= 6000 && frame < 7000) scene_counter = 6; //scene5 = virus attack antibody
     
+    
+    
+    // Scene Counter
+    if (frame >= 0 && frame < 20) scene_counter = 1; //introduction
+    else if (frame >= 20 && frame < 1470) scene_counter = 2; //scene1 = going to door
+    else if (frame >= 1470 && frame < 3800) scene_counter = 3; //scene2 = meet infected person
+    else if (frame >= 3800 && frame < 4000) scene_counter = 4; //scene3 = panic mc
+    else if (frame >= 4000 && frame < 6000) scene_counter = 5; //scene4 = virus attack antibody
+    else if (frame >= 6000 && frame < 7000) scene_counter = 6; //scene5 = mc died
+    
+  
     scenes();
 
     glFlush();
@@ -90,17 +87,24 @@ void display() {
 }
 
 void idle() {
-    if (isIdle_S1) {
-        scene1_idle();
-    }
+    
 
     if (isRunning) {
         //if (scene_counter == 1) intro_idle();
-        //if (scene_counter == 2) scene1_idle();
+        if (scene_counter == 2) {
+            if (flag_S1) {
+                isIdle_S1 = true;
+                flag_S1 = false;
+            }
+        }
         if (scene_counter == 3) scene2_idle();
         if (scene_counter == 4) scene3_idle();
         //if (scene_counter == 5) scene4_idle();
-        //if (scene_counter == 6) scene5_idle();
+        if (scene_counter == 6) scene5_idle();
+    }
+
+    if (isIdle_S1) {
+        scene1_idle();
     }
 
     if (frame > 10000) {

@@ -44,13 +44,13 @@ void scene3_text_animation() {
 	renderSpacedBitmapString(
 		3 * SCREEN_WIDTH / 5, 
 		SCREEN_HEIGHT / 2, 
-		GLUT_BITMAP_HELVETICA_18, 
+		GLUT_BITMAP_TIMES_ROMAN_24, 
 		"Mr. Stark, I don't feel so good.");
 
 	renderSpacedBitmapString(
 		3 * SCREEN_WIDTH / 5,
 		SCREEN_HEIGHT / 2 - 20,
-		GLUT_BITMAP_HELVETICA_18,
+		GLUT_BITMAP_TIMES_ROMAN_24,
 		"By Spider-Man");
 }
 
@@ -67,8 +67,6 @@ void scene3_text_damage_animation(){
 	else if (frame >= 3830 && frame < 3835) {
 		scene3_text_damage(textDamage_slidey, 300, 0);
 	}
-	
-		
 }
 
 void scene3_animation() {
@@ -81,7 +79,6 @@ void scene3_animation() {
 		scene3_text_damage_animation();
 	}
 	*/
-
 	scene3_ken_animation();
 	scene3_text_animation();
 	scene3_text_damage_animation();

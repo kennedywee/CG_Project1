@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="functions.h" />
+    <ClInclude Include="intro.h" />
     <ClInclude Include="ken.h" />
     <ClInclude Include="lisa.h" />
     <ClInclude Include="scene1.h" />
@@ -151,6 +152,8 @@
     <ClInclude Include="scene2_animation.h" />
     <ClInclude Include="scene3.h" />
     <ClInclude Include="scene3_animation.h" />
+    <ClInclude Include="scene5.h" />
+    <ClInclude Include="scene5_animation.h" />
     <ClInclude Include="superglobal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

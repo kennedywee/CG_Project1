@@ -50,5 +50,14 @@
     <ClInclude Include="scene1_animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="intro.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene5_animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

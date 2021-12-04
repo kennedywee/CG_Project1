@@ -13,8 +13,9 @@ static bool isRunning = true;
 
 //flag
 bool isScene_1 = true;
-bool isIdle_S1 = true;
+bool isIdle_S1 = false;
 bool isAnima_S1 = true;
+bool flag_S1 = true;
 
 //man leg scene 2
 float manlegL_angle = 0, manlegR_angle = 0, 
