@@ -59,5 +59,17 @@
     <ClInclude Include="scene5_animation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="scene4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="scene4_animation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="covid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vaccine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
