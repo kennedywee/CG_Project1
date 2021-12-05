@@ -105,7 +105,7 @@ void idle() {
 		scene1_idle();
 	}
 
-	if (frame > 4570) {
+	if (frame > 4640) {
 		glLoadIdentity();
 		frame = 0;
 		
