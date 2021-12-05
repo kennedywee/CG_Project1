@@ -76,8 +76,8 @@ void display() {
 	else if (frame >= 20 && frame < 1470) scene_counter = 2; //scene1 = going to door
 	else if (frame >= 1470 && frame < 3800) scene_counter = 3; //scene2 = meet infected person
 	else if (frame >= 3800 && frame < 3840) scene_counter = 4; //scene3 = panic mc
-	else if (frame >= 3840 && frame < 4600) scene_counter = 5; //scene4 = virus attack antibody
-	else if (frame >= 4600 && frame < 4640) scene_counter = 6; //scene5 = mc died
+	else if (frame >= 3840 && frame < 4800) scene_counter = 5; //scene4 = virus attack antibody
+	else if (frame >= 4800 && frame < 4840) scene_counter = 6; //scene5 = mc died
 
 	scenes();
 
@@ -105,7 +105,7 @@ void idle() {
 		scene1_idle();
 	}
 
-	if (frame > 4640) {
+	if (frame > 4840) {
 		glLoadIdentity();
 		frame = 0;
 		
